@@ -41,9 +41,9 @@ public class User {
     }
 
     @POST
-    @Path("attemptlogin")
-    public String attemptloginUser(@FormDataParam("username") String username, @FormDataParam("password") String password) {
-        System.out.println("Invoked attemptloginUser() on path user/attemptlogin");
+    @Path("login")
+    public String loginUser(@FormDataParam("username") String username, @FormDataParam("password") String password) {
+        System.out.println("Invoked loginUser() on path user/login");
         try {
             PreparedStatement ps1 = Main.db.prepareStatement("SELECT password FROM Users WHERE Username = ?");
             ps1.setString(1, username);
@@ -81,6 +81,21 @@ public class User {
         } catch (Exception exception) {
             System.out.println("Database error" + exception.getMessage());
             return false;
+        }
+    }
+
+    @POST
+    @Path("logout")
+    public String logoutUser(@FormDataParam("sessiontoken") String sessiontoken) {
+        System.out.println("Invoked logoutUser()");
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("DELETE FROM Users WHERE sessiontoken = ?");
+            ps.setString(1, sessiontoken);
+            ps.execute();
+            return "(\"OK\": \"Cookie deleted from database\"}";
+        } catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Unable to delete cookie, see server console for more info.\"}";
         }
     }
 }
