@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 import server.Main;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,7 +46,7 @@ public class User {
     public String loginUser(@FormDataParam("username") String username, @FormDataParam("password") String password) {
         System.out.println("Invoked loginUser() on path user/login");
         try {
-            PreparedStatement ps1 = Main.db.prepareStatement("SELECT password FROM Users WHERE Username = ?");
+            PreparedStatement ps1 = Main.db.prepareStatement("SELECT password FROM Users WHERE username = ?");
             ps1.setString(1, username);
             ResultSet loginResults = ps1.executeQuery();
             if (loginResults.next() == true) {
@@ -86,10 +87,11 @@ public class User {
 
     @POST
     @Path("logout")
-    public String logoutUser(@FormDataParam("sessiontoken") String sessiontoken) {
+    public String logoutUser(@CookieParam("token") Cookie token) {
         System.out.println("Invoked logoutUser()");
         try {
-            PreparedStatement ps = Main.db.prepareStatement("DELETE FROM Users WHERE sessiontoken = ?");
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE Users SET Sessiontoken = NULL");
+            String sessiontoken = UUID.randomUUID().toString();
             ps.setString(1, sessiontoken);
             ps.execute();
             return "(\"OK\": \"Cookie deleted from database\"}";
