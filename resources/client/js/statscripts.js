@@ -17,3 +17,8 @@ function postUserLogout(){
     }
 });
 }
+
+function sendseasons(){
+    console.log("invoked sendseasons");
+    window.open("Drivers.html", "_self");
+}
