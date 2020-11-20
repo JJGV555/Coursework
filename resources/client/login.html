@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="css/loginstyle.css">
     <script type="text/javascript" src="js/loginscript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
 
 </head>
 <body>
 
-<form id="loginForm">
-    <input type="text" name="username" id="username">
-    <input type="password" name="password" id="password">
-</form>
-<button class="button" onclick='postUserLogin();'>LOGIN</button>
+<login>
+    <label>Login</label>
+    <form id="loginForm">
+        Username:
+        <br>
+        <input type="text" name="username" id="username">
+        <br>
+        <br>
+        Password:
+        <br>
+        <input type="password" name="password" id="password">
+    </form>
+    <button class="button" onclick='postUserLogin();'>LOGIN</button>
+</login>
 
 </body>
 </html>

@@ -84,9 +84,7 @@ public class User {
             return false;
         }
     }
-
-    @GET
-    @Path("dinfo")
+}
 
 
     //@POST
@@ -104,4 +102,4 @@ public class User {
             //return "{\"Error\": \"Unable to delete cookie, see server console for more info.\"}";
         //}
     //}
-}
+
