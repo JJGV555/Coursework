@@ -24,22 +24,22 @@ public class dinfo {
             ResultSet results = ps.executeQuery();
             JSONObject response = new JSONObject();
             while (results.next() == true) {
-                response.put("Name", results.getString(2));
-                response.put("Nationality", results.getString(3));
-                response.put("FirstYear", results.getInt(4));
-                response.put("LastYear", results.getInt(5));
-                response.put("RaceStarts", results.getInt(6));
-                response.put("Points", results.getInt(7));
-                response.put("Wins", results.getInt(8));
-                response.put("Poles", results.getInt(9));
-                response.put("Podiums", results.getInt(10));
-                response.put("BestQuali", results.getString(11));
-                response.put("BestResult", results.getString(12));
-                response.put("DNFs", results.getInt(13));
-                response.put("DNQs", results.getInt(14));
-                response.put("DSQs", results.getInt(15));
-                response.put("BestChampPos", results.getString(16));
-                response.put("ChampionshipNo", results.getInt(17));
+                response.put("Name", results.getString(3));
+                response.put("Nationality", results.getString(4));
+                response.put("FirstYear", results.getInt(5));
+                response.put("LastYear", results.getInt(6));
+                response.put("RaceStarts", results.getInt(7));
+                response.put("Points", results.getInt(8));
+                response.put("Wins", results.getInt(9));
+                response.put("Poles", results.getInt(10));
+                response.put("Podiums", results.getInt(11));
+                response.put("BestQuali", results.getString(12));
+                response.put("BestResult", results.getString(13));
+                response.put("DNFs", results.getInt(14));
+                response.put("DNQs", results.getInt(15));
+                response.put("DSQs", results.getInt(16));
+                response.put("BestChampPos", results.getString(17));
+                response.put("ChampionshipNo", results.getInt(18));
             }
             return response.toString();
         } catch (Exception exception) {
