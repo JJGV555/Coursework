@@ -87,19 +87,6 @@ public class User {
 }
 
 
-    //@POST
-    //@Path("logout")
-    //public String logoutUser(@CookieParam("token") Cookie token) {
-        //System.out.println("Invoked logoutUser()");
-        //try {
-            //PreparedStatement ps = Main.db.prepareStatement("UPDATE Users SET Sessiontoken = NULL");
-            //String sessiontoken = UUID.randomUUID().toString();
-            //ps.setString(1, sessiontoken);
-            //ps.execute();
-            //return "(\"OK\": \"Cookie deleted from database\"}";
-        //} catch (Exception exception) {
-            //System.out.println("Database error: " + exception.getMessage());
-            //return "{\"Error\": \"Unable to delete cookie, see server console for more info.\"}";
-        //}
-    //}
+
+
 
