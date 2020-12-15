@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 public class dinfo {
     @GET
     @Path("list/{Name}")
-    public String Driverlist(@PathParam("Name") String Name) {
+    public String driverlist(@PathParam("Name") String Name) {
         System.out.println("invoked user.dinfo");
         try {
             PreparedStatement ps = Main.db.prepareStatement("SELECT * FROM Drivers WHERE Name = ?");

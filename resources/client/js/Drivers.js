@@ -9,7 +9,7 @@ function dsearch() {
     console.log("invoked dsearch")
     var driver = document.getElementById('DriverSelect').value;
     if (driver == 'blank') {
-        console.log("a driver must be selected to continue");
+        alert("a driver must be selected to continue");
     } else {
         const dname = driver;
         const url = "/dinfo/list/";

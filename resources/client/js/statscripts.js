@@ -13,3 +13,8 @@ function sendteams(){
     console.log("invoked sendteams");
     window.open("Teams.html", "_self");
 }
+
+function sendseasons(){
+    console.log("invoked sendseasons");
+    window.open("Seasons.html", "_self");
+}

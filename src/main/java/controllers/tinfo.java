@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 public class tinfo {
     @GET
     @Path("list/{Name}")
-    public String Driverlist(@PathParam("Name") String Name) {
+    public String teamlist(@PathParam("Name") String Name) {
         System.out.println("invoked user.tinfo");
         try {
             PreparedStatement ps = Main.db.prepareStatement("SELECT * FROM Teams WHERE Name = ?");

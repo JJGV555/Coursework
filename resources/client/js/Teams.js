@@ -9,7 +9,7 @@ function tsearch() {
     console.log("invoked dsearch")
     var driver = document.getElementById('TeamSelect').value;
     if (driver == 'blank') {
-        console.log("a team must be selected to continue");
+        alert("a team must be selected to continue");
     } else {
         const tname = driver;
         const url = "/tinfo/list/";
