@@ -1,17 +1,11 @@
 "use strict";
-$(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-});
-
 function tsearch() {
-    console.log("invoked dsearch")
-    var driver = document.getElementById('TeamSelect').value;
-    if (driver == 'blank') {
+    console.log("invoked tsearch")
+    var team = document.getElementById('TeamSelect').value;
+    if (team == 'blank') {
         alert("a team must be selected to continue");
     } else {
-        const tname = driver;
+        const tname = team;
         const url = "/tinfo/list/";
 
         fetch(url + tname, {
